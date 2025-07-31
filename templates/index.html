@@ -1,0 +1,47 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Prediction Model</title>
+
+    <!-- Use Flask's url_for to load the stylesheet correctly -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="login"> 
+    <h1>CROP PREDICTION MODEL</h1>
+
+    {% if prediction_text %}
+        <h2 style="text-align: center; color: #00ffae; margin-bottom: 20px;">{{ prediction_text }}</h2>
+    {% endif %}
+
+        <form action="{{ url_for('predict') }}" method="post">
+            <label for="nitrogen">Nitrogen:</label>
+            <input type="text" placeholder="nitrogen" name="nitrogen" required />
+
+            <label for="phosphorus">Phosphorus:</label>
+            <input type="text" placeholder="phosphorus" name="phosphorus" required />
+
+            <label for="potassium">Potassium:</label>
+            <input type="text" placeholder="potassium" name="potassium" required />
+
+            <label for="temperature">Temperature:</label>
+            <input type="text" placeholder="temperature" name="temperature" required />
+
+            <label for="humidity">Humidity:</label>
+            <input type="text" placeholder="humidity" name="humidity" required />
+
+            <label for="ph">pH:</label>
+            <input type="text" placeholder="pH" name="ph" required />
+
+            <label for="rainfall">Rainfall:</label>
+            <input type="text" placeholder="rainfall" name="rainfall" required />
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>

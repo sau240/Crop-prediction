@@ -1,0 +1,128 @@
+/* Apply Google Font */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url("image.png") no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Blurred overlay behind everything */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(12px) brightness(0.4);  /* Blur + darken */
+    -webkit-backdrop-filter: blur(12px) brightness(0.4);
+    z-index: 0;
+}
+
+/* Glassmorphism login container */
+.login {
+    position: relative;
+    z-index: 1; /* Sit on top of blur */
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 18px;
+    padding: 45px;
+    box-shadow: 0 0 30px rgba(0, 255, 170, 0.2);
+    width: 90%;
+    max-width: 520px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    animation: fadeIn 0.8s ease;
+}
+
+/* Headline */
+h1 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+/* Prediction Result */
+h2 {
+    text-align: center;
+    color: #00ffd0;
+    margin-bottom: 20px;
+}
+
+/* Label styling */
+label {
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 4px;
+    display: block;
+    color: #dddddd;
+}
+
+/* Input styling */
+input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+input:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 0 10px rgba(0, 255, 170, 0.4);
+}
+
+/* Button styling */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(135deg, #00ffae 0%, #1ce1d3 100%);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 255, 170, 0.2);
+}
+
+button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(0, 255, 170, 0.4);
+}
+
+button:active {
+    transform: scale(0.97);
+    box-shadow: 0 0 8px rgba(0, 255, 170, 0.25);
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
