@@ -120,3 +120,10 @@ Create a new branch (feature-branch).
 Commit your changes.
 
 Push the branch and create a Pull Request.
+
+
+ # License
+
+This project is licensed under the Apache License 2.0 – you are free to use, modify, and distribute this project, provided that you include a copy of the license in any derivative work.
+
+_For more details, please see the LICENSE file or visit Apache License 2.0._
